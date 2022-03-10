@@ -1,0 +1,233 @@
+<head>
+    <title>Covid-19 Monitoring</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <script src="/cdn-cgi/apps/head/xoKzrxGbh5ZewvkKZ-DF1ieJ-gU.js"></script>
+    <link rel="stylesheet" href="flipclock/flipclock.css">
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+
+    <script src="flipclock/flipclock.js"></script>
+</head>
+<style>
+    * {
+        font-family: 'Oswald', sans-serif;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+    /* body {
+    background-color: #121212;
+    } */
+
+    #masterclock {
+        /* font-family: 'Orbitron', sans-serif; */
+        color: #17e417;
+        font-size: 56px;
+        text-align: center;
+        padding: 30px;
+        background: #0000003b;
+        width: 400px;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    body {
+        background-image: url('background.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .content-center {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        height: 50%;
+    }
+
+    .back {
+        background-image: url(https://i.gifer.com/J4o.gif);
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.2;
+    }
+
+    .ministry {
+        color: white;
+        font-family: arial;
+        font-weight: 600;
+        font-size: 17px;
+        width: 267px;
+        margin: auto;
+        padding-top: 15px;
+    }
+
+    .date {
+        color: #ff2e2e;
+        font-size: 27px;
+    }
+
+    .day {
+        color: #ffffff;
+        font-size: 55px;
+        font-family: arial;
+        font-weight: 700;
+        margin-left: 12px;
+    }
+
+    .clock {
+        zoom: 1;
+        width: 620px;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, .9));
+        z-index: -1;
+    }
+
+    .masterhead {
+        width: 1000px;
+        margin: auto;
+        color: white;
+        padding: 70px;
+        background: #24366778;
+        /* margin: 5px; */
+    }
+    .flip-clock-label {
+        color: white !important;
+    }
+</style>
+
+<body>
+
+    <div class="backdrop"></div>
+    <div id="masterclock"></div>
+    <div class="content-center">
+        <!-- <div class="masterhead">
+            <div style="font-size: 60px;font-weight: 700;">Restricted Movement Order 1</div>
+            <div class="date date1"></div>
+            <div class="clock clock1"></div>
+        </div> -->
+        <div class="masterhead">
+            <!-- <div style="font-size: 40px;font-weight: 900;color: #eadb16;"></div> -->
+            <div style="font-size: 50px;font-weight: 700;">Day: <span class="countday" style="color: #faff00;">0</span> of MCO</div>
+            <div class="clock clock2"></div>
+            <div class="date date2"></div>
+        </div>
+    </div>
+    <div style="text-align: center;position: absolute;bottom: 90px;left: 0;right: 0;">
+        <div style="color: white">Powered By:</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/SKMM-MCMC-2014.png" style="height: 80px;padding: 10px;" alt="">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Coat_of_arms_of_Malaysia.svg" style="height: 80px;padding: 10px;" alt="">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Malaysian_National_Security_Council.svg/1200px-Malaysian_National_Security_Council.svg.png" style="height: 80px;padding: 10px;" alt="">
+        <img src="kkm.png" style="height: 80px;padding: 10px;" alt="">
+    </div>
+
+    <script src="moment.js"></script>
+    <script type="text/javascript">
+        var clock1, clock2;
+        var d = new Date();
+
+        $(document).ready(function () {
+            var start_date = new Date('2020-03-18');
+            var diff_date = d.getDate() - start_date.getDate() - 1;
+            $(".countday").html(diff_date);
+
+            var d1 = new Date('2020-03-31 23:59:59');
+            var d2 = new Date('2020-04-14 23:59:59');
+            console.log('d1', d1);
+            // $(".date").html(moment().format('dddd | MMMM Do YYYY'));
+            $(".date1").html(moment(d1).format('dddd | MMMM Do YYYY'));
+            $(".date2").html(moment(d2).format('dddd | MMMM Do YYYY'));
+            // $(".day").html(moment().format('dddd').toUpperCase());
+
+            // clock1 = $('.clock1').FlipClock(d, {
+            //     clockFace: 'TwentyFourHourClock'
+            // });
+            // ===============================================
+            clock1 = $('.clock1').FlipClock({
+		        clockFace: 'DailyCounter',
+		        autoStart: false,
+		        callbacks: {
+		        	stop: function() {
+		        		$('.message').html('The clock has stopped!')
+		        	}
+		        }
+		    });
+
+            var diff1 = (d1.getTime() - d.getTime())/1000;
+
+
+				    
+		    clock1.setTime(diff1);
+		    clock1.setCountdown(true);
+		    clock1.start();
+            // ===============================================
+            clock2 = $('.clock2').FlipClock({
+		        clockFace: 'DailyCounter',
+		        autoStart: false,
+		        callbacks: {
+		        	stop: function() {
+		        		$('.message').html('The clock has stopped!')
+		        	}
+		        }
+		    });
+
+            var diff2 = (d2.getTime() - d.getTime())/1000;
+
+
+				    
+		    clock2.setTime(diff2);
+		    clock2.setCountdown(true);
+		    clock2.start();
+        });
+
+        setTimeout(function () {
+            location.reload();
+        }, 300000);
+    </script>
+    <script>
+        function currentTime() {
+            var date = new Date(); /* creating object of Date class */
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            hour = updateTime(hour);
+            min = updateTime(min);
+            sec = updateTime(sec);
+            // document.getElementById("masterclock").innerText = hour + " : " + min + " : " + sec;
+            $("#masterclock").html('<div style="color: white;font-size: 27px;">'+moment(d).format('ddd | MMMM Do YYYY') + " | " + hour + " : " + min + " : " + sec +'</div>');
+            var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+        }
+
+        function updateTime(k) {
+            if (k < 10) {
+                return "0" + k;
+            }
+            else {
+                return k;
+            }
+        }
+
+        currentTime(); /* calling currentTime() function to initiate the process */
+    </script>
+</body>

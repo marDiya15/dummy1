@@ -1,0 +1,359 @@
+<head>
+    <title>Pilihan Raya Negeri Johor</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <script src="/cdn-cgi/apps/head/xoKzrxGbh5ZewvkKZ-DF1ieJ-gU.js"></script>
+    <link rel="stylesheet" href="flipclock/flipclock.css">
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+
+    <script src="flipclock/flipclock.js"></script>
+</head>
+<style>
+    * {
+        font-family: 'Oswald', sans-serif;
+        color: white;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+    /* body {
+    background-color: #121212;
+    } */
+
+    #masterclock {
+        /* font-family: 'Orbitron', sans-serif; */
+        color: #17e417;
+        font-size: 56px;
+        text-align: center;
+        padding: 30px;
+        background: #0000003b;
+        width: 400px;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    body {
+        background-image: url('mic-background2.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .content-center {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        height: 50%;
+    }
+
+    .back {
+        background-image: url(https://i.gifer.com/J4o.gif);
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.2;
+    }
+
+    .ministry {
+        color: white;
+        font-family: arial;
+        font-weight: 600;
+        font-size: 17px;
+        width: 267px;
+        margin: auto;
+        padding-top: 15px;
+    }
+
+    .date {
+        color: #ff2e2e;
+        font-size: 27px;
+    }
+
+    .day {
+        color: #ffffff;
+        font-size: 55px;
+        font-family: arial;
+        font-weight: 700;
+        margin-left: 12px;
+    }
+
+    .clock {
+        zoom: 1;
+        width: 620px;
+        margin: auto;
+        /* margin-top: 20px; */
+    }
+
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, .9));
+        z-index: -1;
+    }
+
+    .masterhead {
+        width: 1000px;
+        margin: auto;
+        color: white;
+        padding: 70px;
+        background: #24366778;
+        /* margin: 5px; */
+    }
+    .flip-clock-label {
+        color: white !important;
+    }
+
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .flex-item {
+        text-align: center;
+        height: 250px;
+        background: #00000054;
+        flex: 40%;
+        max-width: 50%;
+        margin: 10px;
+    }
+    .flex-master {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .header {
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 60px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="backdrop"></div>
+
+    <div style="display:flex;align-items: center;justify-content:center;width:100%;height:100%">
+        <div style="display:flex;flex-wrap:wrap;align-items: center;justify-content: center;width:90%">
+            <div class="header" style="flex: 100%">PILIHAN RAYA NEGERI JOHOR</div>
+            <div style="font-size: 24px;color: #c7d140;" class="todays-date">Tuesday | February 15th 2022</div>
+            <div class="flex-master" style="flex: 100%">
+                <div class="flex">
+                    <!-- <div class="flex-item">
+                        <p style="font-size:30px">Tarikh Penamaan Calon: <span style="color: #00a55d">February 26th 2022</span></p>
+                        <div id="clock1" class="clock"></div>
+                    </div>
+                    <div class="flex-item">
+                        <p style="font-size:30px">Tarikh Pengundian Awal: <span style="color: #00a55d">March 8th 2022</span></p>
+                        <div id="clock2" class="clock"></div>
+                    </div> -->
+                    <div class="flex-item">
+                        <p style="font-size:30px">Tarikh Pengundian: <span style="color: #00a55d">March 12th 2022</span></p>
+                        <div id="clock3" class="clock"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="text-align: center;">Powered By:</div>
+                <div style="text-align:center;margin-top:20px">
+                    <img src="mic.png" alt="" style="height:70px;margin:10px">
+                    <img src="bn.png" alt="" style="height:70px;margin:10px">
+                    <img src="johor.png" alt="" style="height:70px;margin:10px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="moment.js"></script>
+    <script>
+        // declare clocks
+        // var clock1, clock2, clock3;
+        var end_clock = '<span class="flip-clock-divider days">'+
+                '<span class="flip-clock-label">Days</span>'+
+            '</span>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>'+
+            '<span class="flip-clock-divider hours"><span class="flip-clock-label">Hours</span><span class="flip-clock-dot top"></span><span class="flip-clock-dot bottom"></span></span>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>'+
+            '<span class="flip-clock-divider minutes"><span class="flip-clock-label">Minutes</span><span class="flip-clock-dot top"></span><span class="flip-clock-dot bottom"></span></span>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>'+
+            '<span class="flip-clock-divider seconds"><span class="flip-clock-label">Seconds</span><span class="flip-clock-dot top"></span><span class="flip-clock-dot bottom"></span></span>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>'+
+            '<ul class="flip ">'+
+                '<li class="flip-clock-active">'+
+                    '<a href="#">'+
+                        '<div class="up">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                        '<div class="down">'+
+                            '<div class="shadow"></div>'+
+                            '<div class="inn">0</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</li>'+
+            '</ul>';
+
+        $(document).ready(function() {
+            currentTime();
+            renderClock($("#clock1"), new Date("2022-02-26 07:59:59"));
+            renderClock($("#clock2"), new Date("2022-03-08 07:59:59"));
+            renderClock($("#clock3"), new Date("2022-03-12 07:59:59"));
+        });
+
+        function renderClock(el, start_date) {
+            var clock = el.FlipClock({
+                clockFace: 'DailyCounter',
+                autoStart: false,
+                callbacks: {
+                    stop: function() {
+                        $(".message").html('The Clock has stopped!');
+                    }
+                }
+            });
+            var now = new Date();
+            var diff = (start_date - now)/1000;
+            clock.setTime(diff);
+            clock.setCountdown(true);
+            clock.start();
+
+            setInterval(function() {
+                if(now > start_date) {
+                    el.html(end_clock);
+                }
+            }, 1000);
+        }
+
+        function currentTime() {
+            var date = new Date(); /* creating object of Date class */
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            hour = updateTime(hour);
+            min = updateTime(min);
+            sec = updateTime(sec);
+            // document.getElementById("masterclock").innerText = hour + " : " + min + " : " + sec;
+            $(".todays-date").html('<div>'+moment(date).format('ddd | MMMM Do YYYY') + " | " + hour + " : " + min + " : " + sec +'</div>');
+            var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+        }
+
+        function updateTime(k) {
+            if (k < 10) {
+                return "0" + k;
+            }
+            else {
+                return k;
+            }
+        }
+    </script>
+</body>
