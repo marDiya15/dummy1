@@ -1,5 +1,5 @@
 <head>
-    <title>Pilihan Raya Negeri Johor</title>
+    <title>Pilihan Raya Umum ke 15</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <script src="/cdn-cgi/apps/head/xoKzrxGbh5ZewvkKZ-DF1ieJ-gU.js"></script>
     <link rel="stylesheet" href="flipclock/flipclock.css">
@@ -23,7 +23,7 @@
 
     #masterclock {
         /* font-family: 'Orbitron', sans-serif; */
-        color: #17e417;
+        color: #a7dda7;
         font-size: 56px;
         text-align: center;
         padding: 30px;
@@ -34,7 +34,7 @@
     }
 
     body {
-        background-image: url('mic-background2.jpg');
+        background-image: url('Picture 2.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -43,7 +43,7 @@
         text-align: center;
         display: flex;
         align-items: center;
-        height: 50%;
+        height: 40%;
     }
 
     .back {
@@ -127,12 +127,11 @@
         width: 100%;
     }
     .flex-item {
-        text-align: center;
         height: 250px;
         background: #00000054;
-        flex: 40%;
+        flex: 60%;
         max-width: 50%;
-        margin: 10px;
+        margin: 40px;
     }
     .flex-master {
         display: flex;
@@ -142,7 +141,7 @@
     }
     .header {
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 60px;
+        font-size: 80px;
         text-align: center;
     }
 </style>
@@ -150,35 +149,26 @@
 <body>
     <div class="backdrop"></div>
 
-    <div style="display:flex;align-items: center;justify-content:center;width:100%;height:100%">
-        <div style="display:flex;flex-wrap:wrap;align-items: center;justify-content: center;width:90%">
-            <div class="header" style="flex: 100%">PILIHAN RAYA NEGERI JOHOR</div>
-            <div style="font-size: 24px;color: #c7d140;" class="todays-date">Tuesday | February 15th 2022</div>
-            <div class="flex-master" style="flex: 100%">
-                <div class="flex">
-                    <!-- <div class="flex-item">
-                        <p style="font-size:30px">Tarikh Penamaan Calon: <span style="color: #00a55d">February 26th 2022</span></p>
-                        <div id="clock1" class="clock"></div>
-                    </div>
-                    <div class="flex-item">
-                        <p style="font-size:30px">Tarikh Pengundian Awal: <span style="color: #00a55d">March 8th 2022</span></p>
-                        <div id="clock2" class="clock"></div>
-                    </div> -->
-                    <div class="flex-item">
-                        <p style="font-size:30px">Baki Masa Mengundi : <span style="color: #00a55d">8:00 AM - 6:00 PM</span></p>
-                        <div id="clock3" class="clock"></div>
-                    </div>
-                </div>
+    <div style="display:flex;align-items: center;justify-content:center;width:100%;height:80%">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;width:90%">
+            <div class="flex">
+                <div class=" ">
+                <img src="Jata Negara.png" alt="" style="height:70px;margin:20px">
+
+                <img src="Keluarga Malaysia.png" alt="" style="height:70px;margin:20px">
+
+                <img src="L5C.png" alt="" style="height:70px;margin:20px">
             </div>
-            <div>
-                <div style="text-align: center;">Powered By:</div>
-                <div style="text-align:center;margin-top:20px">
-                    <img src="mic.png" alt="" style="height:70px;margin:10px">
-                    <img src="bn.png" alt="" style="height:70px;margin:10px">
-                    <img src="johor.png" alt="" style="height:70px;margin:10px">
-                </div>
+            <div class="header" style="flex: 100%">PILIHAN RAYA UMUM KE 15</div>
+            <div style="font-size: 32px;color: #c7d140;" class="todays-date"> | Oktober 17 2022</div>
+            <div class="flex-master" style="flex: 100%">
+                <div class="flex-item">
+                    <p style="font-size:30px;margin-left: 110px">TARIKH PENGUMUMAN: <span style="color: #ffffff">3:00 PM (KHAMIS)</span></p>
+                    <div id="clock3" class="clock"></div>
+                </div> 
             </div>
         </div>
+    </div>
     </div>
 
     <script src="moment.js"></script>
@@ -306,9 +296,9 @@
 
         $(document).ready(function() {
             currentTime();
-            renderClock($("#clock1"), new Date("2022-02-26 07:59:59"));
-            renderClock($("#clock2"), new Date("2022-03-08 07:59:59"));
-            renderClock($("#clock3"), new Date("2022-03-12 17:59:59"));
+            /*renderClock($("#clock1"), new Date("2022-11-05 07:59:59"));*/
+            /*renderClock($("#clock2"), new Date("2022-11-15 07:59:59"));*/
+            renderClock($("#clock3"), new Date("2022-10-20 15:00:59"));
         });
 
         function renderClock(el, start_date) {
