@@ -2460,12 +2460,12 @@ var FlipClock;
 
     FlipClock.Lang.English = {
 
-        'years': 'Years',
-        'months': 'Months',
-        'days': 'Days',
-        'hours': 'Hours',
-        'minutes': 'Minutes',
-        'seconds': 'Seconds'
+        'years': 'Tahun',
+        'months': 'Bulan',
+        'days': 'Hari',
+        'hours': 'Jam',
+        'minutes': 'Minit',
+        'seconds': 'Saat'
 
     };
 

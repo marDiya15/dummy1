@@ -127,7 +127,7 @@
         width: 100%;
     }
     .flex-item {
-        height: 250px;
+        height: 180px;
         background: #00000054;
         flex: 20%;
         max-width: 60%;
@@ -152,25 +152,25 @@
 
     <div style="display:flex;align-items: center;justify-content:center;width:100%">
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;width:80%">
-            <div class="header" style="flex: 100%; margin-top: 100px">PILIHAN RAYA UMUM KE 15</div>
+            <div class="header" style="flex: 100%">PILIHAN RAYA UMUM KE-15</div>
 
-            <div style="font-size: 28px;color: #c7d140;" class="todays-date"> | Oktober 17 2022</div>
+            <div style="font-size: 28px;color: #c7d140;" class="todays-date"> | 15 Oktober 2022</div>
             
             <div class="flex-master" style="flex: 100%">
                 <div class="flex-item">
-                    <p style="font-size:28px;text-align: center; margin-top:10px">TARIKH PENAMAAN CALON: <span style="color: #ffffff">05 NOVEMBER (SABTU)</span></p>
+                    <p style="font-size:28px;text-align: center; margin-top:5px">TARIKH PENAMAAN CALON: <span style="color: #ffffff">05 NOVEMBER (SABTU)</span></p>
                     <div id="clock1" class="clock"></div>
                 </div>
             </div>
             
             <div class="flex master" style="flex: 100%">
                 <div class="flex-item">
-                    <p style="font-size:28px;text-align: center; margin-top:10px">TARIKH PENGUNDI AWAL: <span style="color: #ffffff">15 NOVEMBER (SELASA)</span></p>
+                    <p style="font-size:28px;text-align: center; margin-top:5px">TARIKH PENGUNDI AWAL: <span style="color: #ffffff">15 NOVEMBER (SELASA)</span></p>
                     <div id="clock2" class="clock"></div>
                 </div>
             </div>
                 <div class="flex-item">
-                    <p style="font-size:28px;text-align: center; margin-top:10px">TARIKH PENGUNDI: <span style="color: #ffffff">19 NOVEMBER (SABTU)</span></p>
+                    <p style="font-size:28px;text-align: center; margin-top:5px">TARIKH PENGUNDI: <span style="color: #ffffff">19 NOVEMBER (SABTU)</span></p>
                     <div id="clock3" class="clock"></div>
                 </div>
             </div>
@@ -361,7 +361,7 @@
             min = updateTime(min);
             sec = updateTime(sec);
             // document.getElementById("masterclock").innerText = hour + " : " + min + " : " + sec;
-            $(".todays-date").html('<div>'+moment(date).format('dddd, MMMM Do YYYY') + "  " + hour + " : " + min + " : " + sec +'</div>');
+            $(".todays-date").html('<div>'+moment(date).format('dddd, Do MMMM YYYY') + "  " + hour + " : " + min + " : " + sec +'</div>');
             var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
         }
 
