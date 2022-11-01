@@ -1,7 +1,7 @@
 <head>
-    <title>Countdown 1</title>
+    <title>Countdown PRU-15</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-    <script src="/cdn-cgi/apps/head/xoKzrxGbh5ZewvkKZ-DF1ieJ-gU.js"></script>
+    <!-- <script src="/cdn-cgi/apps/head/xoKzrxGbh5ZewvkKZ-DF1ieJ-gU.js"></script> -->
     <link rel="stylesheet" href="flipclock/flipclock.css">
 
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
@@ -166,14 +166,18 @@
             </div>
 
             <div class="flex master" style="flex: 100%">
-                <div class="flex-item">
-                    <p style="font-size:30px">TARIKH PENGUNDIAN AWAL: <span style="color: #ffffff">15 NOVEMBER (SELASA)</span></p>
-                    <div id="clock2" class="clock"></div>
+                <div class="flex">
+                    <div class="flex-item">
+                        <p style="font-size:30px">TARIKH PENGUNDIAN AWAL: <span style="color: #ffffff">15 NOVEMBER (SELASA)</span></p>
+                        <div id="clock2" class="clock"></div>
+                    </div>
                 </div>
+            </div>
                 <div class="flex-item">
                     <p style="font-size:30px">TARIKH MENGUNDI: <span style="color: #ffffff">19 NOVEMBER (SABTU)</span></p>
                     <div id="clock3" class="clock"></div>
                 </div>
+            </div>
             </div>
 
 
@@ -373,7 +377,7 @@
             min = updateTime(min);
             sec = updateTime(sec);
             // document.getElementById("masterclock").innerText = hour + " : " + min + " : " + sec;
-            $(".todays-date").html('<div>'+moment(date).format('ddd, Do MMMM YYYY') + " " + hour + " : " + min + " : " + sec +'</div>');
+            $(".todays-date").html('<div>'+moment(date).format('dddd, Do MMMM YYYY') + ", " + hour + " : " + min + " : " + sec +'</div>');
             var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
         }
 
